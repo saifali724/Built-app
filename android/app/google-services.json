@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915967892430",
+    "project_id": "techbuddy-7b7c6",
+    "storage_bucket": "techbuddy-7b7c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915967892430:android:5cd1c74e5743d8c8f5e99f",
+        "android_client_info": {
+          "package_name": "com.example.other"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK_qbMkWQficesEPaBiB4SmbaBS1wJ1TE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

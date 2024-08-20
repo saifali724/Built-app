@@ -20,6 +20,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Define custom color with 30% opacity
+    final Color customGreyColor = Color(0xD9D9D9D9); // D9D9D9 with 30% opacity
+
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -27,18 +30,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 60), // Space for status bar
+              SizedBox(height: 30), // Space for status bar
               Center(
                 child: Text(
                   'Create New Account',
                   style: TextStyle(
-                    fontSize: 30, // Increased font size
+                    fontSize: 26, // Increased font size
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF0B8FAC),
                   ),
                 ),
               ),
-              SizedBox(height: 30), // Increased space
+              SizedBox(height: 20), // Increased space
               Text(
                 'Full Name',
                 style: TextStyle(
@@ -46,13 +49,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 12), // Increased space
+              SizedBox(height: 18), // Increased space
               TextField(
-                style: TextStyle(fontSize: 22), // Increased font size
+                style: TextStyle(fontSize: 18), // Increased font size
                 decoration: InputDecoration(
                   hintText: 'Enter Your Full Name',
                   filled: true,
-                  fillColor: Colors.grey[200],
+                  fillColor: customGreyColor, // Updated fill color
                   contentPadding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0), // Increased height
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.0), // Increased border radius
@@ -60,7 +63,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 30), // Increased space
+              SizedBox(height: 20), // Increased space
               Text(
                 'Password',
                 style: TextStyle(
@@ -68,14 +71,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 12), // Increased space
+              SizedBox(height: 10), // Increased space
               TextField(
                 obscureText: _obscureText,
-                style: TextStyle(fontSize: 22), // Increased font size
+                style: TextStyle(fontSize: 18), // Increased font size
                 decoration: InputDecoration(
                   hintText: 'Enter Your Password',
                   filled: true,
-                  fillColor: Colors.grey[200],
+                  fillColor: customGreyColor, // Updated fill color
                   contentPadding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0), // Increased height
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.0), // Increased border radius
@@ -84,13 +87,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   suffixIcon: IconButton(
                     icon: Icon(
                       _obscureText ? Icons.visibility_off : Icons.visibility,
-                      color: Colors.grey,
+                      color: _obscureText ? Colors.blue : Colors.black, // Update icon color
                     ),
                     onPressed: _togglePasswordVisibility,
                   ),
                 ),
               ),
-              SizedBox(height: 30), // Increased space
+              SizedBox(height: 20), // Increased space
               Text(
                 'Email',
                 style: TextStyle(
@@ -100,11 +103,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               SizedBox(height: 12), // Increased space
               TextField(
-                style: TextStyle(fontSize: 22), // Increased font size
+                style: TextStyle(fontSize: 18), // Increased font size
                 decoration: InputDecoration(
                   hintText: 'Enter Your Email',
                   filled: true,
-                  fillColor: Colors.grey[200],
+                  fillColor: customGreyColor, // Updated fill color
                   contentPadding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0), // Increased height
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.0), // Increased border radius
@@ -112,7 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 30), // Increased space
+              SizedBox(height: 20), // Increased space
               Text(
                 'Mobile Number',
                 style: TextStyle(
@@ -122,11 +125,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               SizedBox(height: 12), // Increased space
               TextField(
-                style: TextStyle(fontSize: 22), // Increased font size
+                style: TextStyle(fontSize: 18), // Increased font size
                 decoration: InputDecoration(
                   hintText: 'Enter Your Phone Number',
                   filled: true,
-                  fillColor: Colors.grey[200],
+                  fillColor: customGreyColor, // Updated fill color
                   contentPadding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0), // Increased height
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.0), // Increased border radius
@@ -144,7 +147,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF0B8FAC),
-                    padding: EdgeInsets.symmetric(horizontal: 100, vertical: 18), // Increased padding
+                    minimumSize: Size(376.55, 60), // Set width and height
+                    padding: EdgeInsets.symmetric(horizontal: 16.0), // Adjust horizontal padding if needed
                     textStyle: TextStyle(
                       fontSize: 18, // Increased font size
                       fontWeight: FontWeight.bold,
@@ -152,7 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 30), // Increased space
+              SizedBox(height: 10), // Increased space
               Center(
                 child: Text(
                   'OR',
@@ -168,7 +172,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     IconButton(
-                      icon: FaIcon(FontAwesomeIcons.apple, size: 50, color: Colors.black), // Increased icon size
+                      icon: FaIcon(FontAwesomeIcons.apple, size: 60, color: Colors.black), // Increased icon size
                       onPressed: () {},
                     ),
                     SizedBox(width: 20), // Increased space
@@ -189,7 +193,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: RichText(
                   text: TextSpan(
                     text: "Already have an account? ",
-                    style: TextStyle(color: Colors.black, fontSize: 16), // Increased font size
+                    style: TextStyle(color: Colors.grey, fontSize: 16), // Increased font size
                     children: <TextSpan>[
                       TextSpan(
                         text: 'Sign In',
